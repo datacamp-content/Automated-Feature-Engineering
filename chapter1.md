@@ -3,7 +3,7 @@ title: Test
 description: Test
 ---
 
-## An exercise title written in sentence case
+## Familiarity with the Data
 
 ```yaml
 type: NormalExercise
@@ -13,12 +13,11 @@ xp: 100
 skills: 2
 ```
 
-This is the assignment text. It should help provide students with the background information needed.
-The instructions that follow should be in bullet point form with clear guidance for what is expected.
+The first step in feature engineering is understanding the data. The simplest way to do this is to start looking at the data with summary methods.
 
 `@instructions`
-- Instruction 1
-- Instruction 2
+- Print out the first 5 rows of the data
+- Display summary statistics for each column of the data
 - Instruction 3
 
 `@hint`
@@ -29,28 +28,22 @@ The instructions that follow should be in bullet point form with clear guidance 
 
 `@pre_exercise_code`
 ```{python}
-# Load datasets and packages here.
+import pandas as pd
 ```
 
 `@sample_code`
 ```{python}
-# Your
-# sample
-# code
-# should
-# be
-# ideally
-# 10 lines or less,
-# with a max
-# of 16 lines.
+# Read in dataset, parsing the date column
+data = pd.read_csv('online-retail_sample.csv', parse_dates = 'order_date')
 ```
 
 `@solution`
 ```{python}
-# Answer goes here
-# Make sure to match the comments with your sample code
-# to help students see the differences from solution
-# to given.
+# Print the first five rows
+data.head()
+
+# Print a summary of each column
+data.describe()
 ```
 
 `@sct`
